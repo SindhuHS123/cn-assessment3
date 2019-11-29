@@ -1,0 +1,19 @@
+linux commands
+
+-A RH -firewall -l -input -p icmp --icmp-
+type echp -request -m limit --limit 11/ s--limit -burst 3 j- ACCEPT
+
+these rules are designed to allow incoming ping requests with limit 1/8 one per second
+
+--limit; specifies the rate at what tokens get refilled into the bucket 4/hour means 4tokens per hour(1 token every 15 mins)
+
+--limit -burst; specifies the maximum amount of tokens can be filled in the bucket (this is also the amount of tokens the bucket states out with)
+
+the limit-burst argument specifies the number of matter that are allow through before the limit of 1 per sec "kicks in" these two rules both apply only to ICMP echo request
+packets (incoming PING requests) these are not perhost limits and apply to anything the rule matches(which in this case would be all ICMP echo requests)
+
+so for the second rule it will allow rep to 8 icmp echo request packet(nomatter how quickly they"'re recieved ) and the only allow 1 icmp packet per second after that (regardles
+of wich host the request is coming from)?
+at what point docs iptable reset and allow a burst of rep three packets again
+
+      we learnt about the linux/unix commands through and got ideam of it and how to calculate the burst rate and output rate and how the leaky bucket works. 
