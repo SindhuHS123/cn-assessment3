@@ -1,3 +1,5 @@
+Question no: 05
+
 EXPLANATION;
 
 In this leaky bucket holds tokens generated at maximum interval of time.
@@ -5,32 +7,32 @@ Bucket has maximum capacity.
 Bursty traffic is converted into uniform by leaky bucket.
 if there is a ready packet ,a token is removed from bucket and packet is sent .
 
-• Suppose we have a bucket in which we are pouring water in a random
+â€¢ Suppose we have a bucket in which we are pouring water in a random
 order but we have to get water in a fixed rate, for this we will make a
 hole at the bottom of the bucket.
-• It will ensure that water coming out is in a some fixed rate, and also if
+â€¢ It will ensure that water coming out is in a some fixed rate, and also if
 bucket will full we will stop pouring in it.
-• The input rate can vary, but the output rate remains constant.
-• Similarly, in networking, a technique called leaky bucket can smooth
+â€¢ The input rate can vary, but the output rate remains constant.
+â€¢ Similarly, in networking, a technique called leaky bucket can smooth
 out bursty traffic.
-• Bursty chunks are stored in the bucket and sent out at an average rate.
-• The use of the leaky bucket shapes the input traffic to make it conform
+â€¢ Bursty chunks are stored in the bucket and sent out at an average rate.
+â€¢ The use of the leaky bucket shapes the input traffic to make it conform
 to this commitment.
-• the host sends a burst of data at a rate of 12 Mbps for 2 s, for
+â€¢ the host sends a burst of data at a rate of 12 Mbps for 2 s, for
 a total of 24 Mbits of data.
-• The host is silent for 5 s and then sends data at a rate of 2 Mbps for 3
+â€¢ The host is silent for 5 s and then sends data at a rate of 2 Mbps for 3
 s, for a total of 6 Mbits of data.
-• In all, the host has sent 30 Mbits of data in 10 s.
-• The leaky bucket smooths the traffic by sending out data at a rate of 3
+â€¢ In all, the host has sent 30 Mbits of data in 10 s.
+â€¢ The leaky bucket smooths the traffic by sending out data at a rate of 3
 Mbps during the same 10 s.
-• Without the leaky bucket, the beginning burst may have hurt the
+â€¢ Without the leaky bucket, the beginning burst may have hurt the
 network by consuming more bandwidth than is set aside for this host.
-• We can also see that the leaky bucket may prevent congestion.
-• A simple leaky bucket algorithm can be implemented using FIFO queue.
-• A FIFO queue holds the packets. If the traffic consists of fixed-size
+â€¢ We can also see that the leaky bucket may prevent congestion.
+â€¢ A simple leaky bucket algorithm can be implemented using FIFO queue.
+â€¢ A FIFO queue holds the packets. If the traffic consists of fixed-size
 packets (e.g., cells in ATM networks), the process removes a fixed
 number of packets from the queue at each tick of the clock.
-• If the traffic consists of variable-length packets,
+â€¢ If the traffic consists of variable-length packets,
 
 
 to calculate output rate A is
