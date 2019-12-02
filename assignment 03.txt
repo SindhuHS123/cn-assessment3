@@ -1,0 +1,29 @@
+question; A05
+
+x=8(usn 078)+10=18
+y=x//2=9
+
+machine A address; 192.168.5.1
+machine B address; 10.0.9.15
+machine C; www.google.com
+
+iptables -A INPUT -m limit --limit 42/min --limit-burst 6 -p icmp --icmp-type echo-reply-s 192.168.56.1 -j 
+DROP(typed in machine B)
+
+
+ The above command uses j drop to drop packets which are appended 
+to input chain,and are of type echo reply coming from source -192.168.56.1
+
+.A new token in generated every 60/42=1.43sec(approx.).
+j DROP drops the packet.
+
+
+
+As tokens are generated at rate 1 token per 1.43seconds and the burst is filled with
+ token in the starting that means that 6 tokens are available at very first second.
+
+first 16 packets(16seconds) are dropped as atleast one token is available at that time.
+
+at 18 second 18 tockens are avialable(6+(18/1.43)) so first 18 packets are dropped but 
+at 19th second no token is available. hence 19 th is accepted then 23rd packet is accepted.
+
